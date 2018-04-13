@@ -1,5 +1,6 @@
 package com.tw;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.LinkedList;
@@ -9,12 +10,30 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 public class LibraryTest {
-    @Test
-    public void testSomeLibraryMethod() {
-        Library classUnderTest = new Library();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+    private ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+    @Before
+    public void setup(){
+        System.setOut(new PrintStream(outContent));
     }
+
+    private String systemOut(){
+        return outContent.toString();
+    }
+
+//    @Test
+//    public void testSomeLibraryMethod() {
+//        Library classUnderTest = new Library();
+////        classUnderTest.mainEntry();
+////
+////        String expectOutput = "";
+////        assertEquals(systemOut(), expectOutput);
+//        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+//    }
 
     @Test
     public void testMockClass() throws Exception {
