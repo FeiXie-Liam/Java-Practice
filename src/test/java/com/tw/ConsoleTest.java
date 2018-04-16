@@ -11,15 +11,15 @@ import static org.junit.Assert.*;
 
 public class ConsoleTest {
 
-    @Test
-    public void should_printMessageSuccess_whenPrintlnInvoked() {
-        ByteArrayOutputStream systemOut = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(systemOut));
-
-        Console.println("this is test message");
-
-        assertThat(systemOut.toString(), is("this is test message\n"));
-    }
+//    @Test
+//    public void should_printMessageSuccess_whenPrintlnInvoked() {
+//        ByteArrayOutputStream systemOut = new ByteArrayOutputStream();
+//        System.setOut(new PrintStream(systemOut));
+//
+//        Console.println("this is test message");
+//
+//        assertThat(systemOut.toString(), is("this is test message\n"));
+//    }
 
     @Test
     public void should_getConsoleInput() {
